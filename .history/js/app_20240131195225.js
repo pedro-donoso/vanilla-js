@@ -44,7 +44,7 @@ const cargarTabla = () => {
 const agregarGift = (event) => {
   event.preventDefault();
 
-  // Extraigo valores de los inputs del formulario
+  // Extraer valores de los inputs del formulario
   let id = datos.at(-1).id + 1;
   let gift = document.querySelector("#gift").value;
   let tipo = document.querySelector("#tipo").value;
@@ -52,16 +52,11 @@ const agregarGift = (event) => {
   let precio = document.querySelector("#precio").value;
   let imagen = document.querySelector("#imagen").value;
 
-  // Creo un nuevo objeto Gift y lo agrego al array de datos
   datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-
-  // Reinicio el formulario y recargo la tabla
-  document.querySelector("#formGift").reset();
+  document.querySelector("#formGift").reset()
   cargarTabla();
 };
 
-// Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);

@@ -13,7 +13,7 @@ const cargarTabla = () => {
   // Limpiao el contenido existente en el cuerpo de la tabla
   cuerpoTabla.innerHTML = "";
 
-  // Mapea cada elemento de los datos y crea filas de la tabla HTML
+  // Mapea cada elemento de los datos y crea fila de la tabla HTML
   datos.map((item) => {
     const fila = document.createElement("tr");
 
@@ -40,11 +40,9 @@ const cargarTabla = () => {
   });
 };
 
-// Función para agregar un nuevo Gift cuando se envía el formulario
 const agregarGift = (event) => {
   event.preventDefault();
 
-  // Extraigo valores de los inputs del formulario
   let id = datos.at(-1).id + 1;
   let gift = document.querySelector("#gift").value;
   let tipo = document.querySelector("#tipo").value;
@@ -52,16 +50,11 @@ const agregarGift = (event) => {
   let precio = document.querySelector("#precio").value;
   let imagen = document.querySelector("#imagen").value;
 
-  // Creo un nuevo objeto Gift y lo agrego al array de datos
   datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-
-  // Reinicio el formulario y recargo la tabla
-  document.querySelector("#formGift").reset();
+  document.querySelector("#formGift").reset()
   cargarTabla();
 };
 
-// Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);

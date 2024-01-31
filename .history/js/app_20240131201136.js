@@ -52,16 +52,12 @@ const agregarGift = (event) => {
   let precio = document.querySelector("#precio").value;
   let imagen = document.querySelector("#imagen").value;
 
-  // Creo un nuevo objeto Gift y lo agrego al array de datos
+  // Crear un nuevo objeto Gift y agregarlo al array de datos
   datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-
-  // Reinicio el formulario y recargo la tabla
   document.querySelector("#formGift").reset();
   cargarTabla();
 };
 
-// Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);

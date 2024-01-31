@@ -60,8 +60,6 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
