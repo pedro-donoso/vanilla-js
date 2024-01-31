@@ -7,18 +7,17 @@ const cargarTabla = () => {
   datos.map((item) => {
     const fila = document.createElement("tr");
 
-    const celdas = `<th>${item.gift}</th>
+    const celdas =`<th>${item.gift}</th>
         <td>${item.tipo}</td>
         <td>${item.tiempo}</td>
         <td>$${item.precio}</td>
         <td>
             <div>
-            <button class="btn btn-outline-warning">
-            <img src="img/boligrafo.png" />
+            <button class="btn btn">
             </button>
             </div>
         </td>
-        `;
+        `
 
         fila.innerHTML=celdas
         cuerpoTabla.append(fila)

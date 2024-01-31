@@ -14,7 +14,7 @@ const cargarTabla = () => {
         <td>
             <div>
             <button class="btn btn-outline-warning">
-            <img src="img/boligrafo.png" />
+            <img class="wi" src="img/boligrafo.png" />
             </button>
             </div>
         </td>
