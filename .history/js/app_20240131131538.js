@@ -1,3 +1,4 @@
 import datos from '../data/data.json' assert{type:"json"};
-import {Gift} from './clases'
+import {} from
 
+console.log(datos);
