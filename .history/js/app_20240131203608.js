@@ -27,7 +27,7 @@ const cargarTabla = () => {
             <button class="btn btn-outline-warning">
             <img src="img/boligrafo.png"/>
             </button>
-            <button onclick="borrarGift(${item.id})" class="btn btn-outline-danger">
+            <button class="btn btn-outline-danger onclick">
             <img src="img/cerrar.png"/>
             </button>
             </div>
@@ -60,11 +60,11 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-window.borrarGift=(id)=>{
+const borrarGift=(id)=>{
 
   let index=datos.findIndex((item)=>item.id==id)
 
-  let validar=confirm(`Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`)
+  let validar=confirm('Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?')
 
   if(validar){
     datos.splice(index, 1)

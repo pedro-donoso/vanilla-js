@@ -64,7 +64,7 @@ window.borrarGift=(id)=>{
 
   let index=datos.findIndex((item)=>item.id==id)
 
-  let validar=confirm(`Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`)
+  let validar=confirm(``Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?')
 
   if(validar){
     datos.splice(index, 1)

@@ -27,7 +27,7 @@ const cargarTabla = () => {
             <button class="btn btn-outline-warning">
             <img src="img/boligrafo.png"/>
             </button>
-            <button onclick="borrarGift(${item.id})" class="btn btn-outline-danger">
+            <button class="btn btn-outline-danger">
             <img src="img/cerrar.png"/>
             </button>
             </div>
@@ -59,19 +59,6 @@ const agregarGift = (event) => {
   document.querySelector("#formGift").reset();
   cargarTabla();
 };
-
-window.borrarGift=(id)=>{
-
-  let index=datos.findIndex((item)=>item.id==id)
-
-  let validar=confirm(`Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`)
-
-  if(validar){
-    datos.splice(index, 1)
-    cargarTabla()
-  }
-
-}
 
 // Inicializo la tabla cuando se carga el script
 cargarTabla();
