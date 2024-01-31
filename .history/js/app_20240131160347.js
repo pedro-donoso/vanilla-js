@@ -41,7 +41,9 @@ const agregarGift = (event) => {
   let imagen = document.querySelector("#imagen").value;
 
   datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-  document.querySelector("#formGift").reset()
+
+  document.querySelector("#formGift").requestFullscreen
+
   cargarTabla();
 };
 

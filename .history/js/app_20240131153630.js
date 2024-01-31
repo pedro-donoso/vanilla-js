@@ -1,11 +1,9 @@
 import datos from "../data/data.json" assert { type: "json" };
-import { Gift } from "./clases.js";
+// import { Gift } from "./clases";
 
 const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 
 const cargarTabla = () => {
-  cuerpoTabla.innerHTML = "";
-
   datos.map((item) => {
     const fila = document.createElement("tr");
 
@@ -25,26 +23,22 @@ const cargarTabla = () => {
         </td>
         `;
 
-    fila.innerHTML = celdas;
-    cuerpoTabla.append(fila);
+        fila.innerHTML=celdas
+        cuerpoTabla.append(fila)
+
   });
 };
 
 const agregarGift = (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  let id = datos.at(-1).id + 1;
-  let gift = document.querySelector("#gift").value;
-  let tipo = document.querySelector("#tipo").value;
-  let tiempo = document.querySelector("#tiempo").value;
-  let precio = document.querySelector("#precio").value;
-  let imagen = document.querySelector("#imagen").value;
+    let id
 
-  datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-  document.querySelector("#formGift").reset()
-  cargarTabla();
+   
+
 };
+
 
 cargarTabla();
 
-document.querySelector("#formGift").addEventListener("submit", agregarGift);
+document.querySelector('#formGift').addEventListener('submit', agregarGift)

@@ -1,11 +1,9 @@
 import datos from "../data/data.json" assert { type: "json" };
-import { Gift } from "./clases.js";
+// import { Gift } from "./clases";
 
 const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 
 const cargarTabla = () => {
-  cuerpoTabla.innerHTML = "";
-
   datos.map((item) => {
     const fila = document.createElement("tr");
 
@@ -37,12 +35,8 @@ const agregarGift = (event) => {
   let gift = document.querySelector("#gift").value;
   let tipo = document.querySelector("#tipo").value;
   let tiempo = document.querySelector("#tiempo").value;
-  let precio = document.querySelector("#precio").value;
-  let imagen = document.querySelector("#imagen").value;
-
-  datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-  document.querySelector("#formGift").reset()
-  cargarTabla();
+  let gift = document.querySelector("#gift").value;
+  let gift = document.querySelector("#gift").value;
 };
 
 cargarTabla();

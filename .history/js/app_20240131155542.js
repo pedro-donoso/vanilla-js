@@ -4,8 +4,6 @@ import { Gift } from "./clases.js";
 const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 
 const cargarTabla = () => {
-  cuerpoTabla.innerHTML = "";
-
   datos.map((item) => {
     const fila = document.createElement("tr");
 
@@ -40,9 +38,18 @@ const agregarGift = (event) => {
   let precio = document.querySelector("#precio").value;
   let imagen = document.querySelector("#imagen").value;
 
-  datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
-  document.querySelector("#formGift").reset()
-  cargarTabla();
+  datos.push(
+    new Gift(
+        id, 
+        gift, 
+        tipo, 
+        tiempo, 
+        precio, 
+        imagen
+        ));
+
+        cargarTabla()
+
 };
 
 cargarTabla();

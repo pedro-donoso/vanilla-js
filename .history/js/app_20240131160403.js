@@ -42,6 +42,7 @@ const agregarGift = (event) => {
 
   datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
   document.querySelector("#formGift").reset()
+
   cargarTabla();
 };
 
