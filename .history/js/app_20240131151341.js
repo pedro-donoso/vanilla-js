@@ -12,7 +12,7 @@ const cargarTabla = () => {
         <td>${item.tiempo}</td>
         <td>$${item.precio}</td>
         <td>
-            <div class="d-flex gap-2">
+            <div>
             <button class="btn btn-outline-warning">
             <img src="img/boligrafo.png"/>
             </button>
