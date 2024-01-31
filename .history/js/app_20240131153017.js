@@ -29,10 +29,9 @@ const cargarTabla = () => {
   });
 };
 
-const agregarGift = (event) => {
+const agregarGift=(event)=>{
 
-    event.preventDefault()
-    console.log('submit');
+    event
 
 }
 

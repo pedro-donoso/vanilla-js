@@ -32,7 +32,7 @@ const cargarTabla = () => {
 const agregarGift = (event) => {
 
     event.preventDefault()
-    console.log('submit');
+    cl
 
 }
 
