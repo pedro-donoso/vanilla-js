@@ -10,7 +10,7 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 // Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {
 
-  // Limpio el contenido existente en el cuerpo de la tabla
+  // Limpiao el contenido existente en el cuerpo de la tabla
   cuerpoTabla.innerHTML = "";
 
   // Mapea cada elemento de los datos y crea filas de la tabla HTML

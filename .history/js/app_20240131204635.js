@@ -1,4 +1,4 @@
-// Importo datos desde el archivo JSON y me aseguro que los datos importados sean de tipo JSON.
+// Importo datos desde el archivo JSON con assert para asegurar que los datos importados sean de tipo JSON.
 import datos from "../data/data.json" assert { type: "json" };
 
 // Importo la clase Gift desde el archivo "clases.js"
@@ -10,7 +10,7 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 // Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {
 
-  // Limpio el contenido existente en el cuerpo de la tabla
+  // Limpiao el contenido existente en el cuerpo de la tabla
   cuerpoTabla.innerHTML = "";
 
   // Mapea cada elemento de los datos y crea filas de la tabla HTML
