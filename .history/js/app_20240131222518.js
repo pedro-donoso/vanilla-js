@@ -8,23 +8,18 @@ import { Gift } from "./clases.js";
 const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 
 // Llamo al Modal
-const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
+const myModal = new bootstrap.Modal(document.getElementById('modalGift'))
 
-// Método Global para mostrar el Modal
-window.mostrarModal = (id) => {
-  let index = datos.findIndex((item) => item.id == id);
+// Método para mostrar el Modal
+const mostrarModal=(id)=>{
 
-  document.querySelector("#giftModal").value = datos[index].gift;
-  document.querySelector("#tipoModal").value = datos[index].tipo;
-  document.querySelector("#tiempoModal").value = datos[index].tiempo;
-  document.querySelector("#precioModal").value = datos[index].precio;
-  document.querySelector("#imagenModal").value = datos[index].imagen;
+  
 
-  myModal.show();
-};
+}
 
 // Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {
+
   // Limpio el contenido existente en el cuerpo de la tabla
   cuerpoTabla.innerHTML = "";
 
@@ -39,7 +34,7 @@ const cargarTabla = () => {
         <td>$${item.precio}</td>
         <td>
             <div class="d-flex gap-2">
-            <button onclick="mostrarModal(${item.id})" class="btn btn-outline-warning">
+            <button class="btn btn-outline-warning">
             <img src="img/boligrafo.png"/>
             </button>
             <button onclick="borrarGift(${item.id})" class="btn btn-outline-danger">
@@ -76,18 +71,18 @@ const agregarGift = (event) => {
 };
 
 // Función para borrar un Gift cuando se hace clic en el botón correspondiente
-window.borrarGift = (id) => {
-  let index = datos.findIndex((item) => item.id == id);
+window.borrarGift=(id)=>{
 
-  let validar = confirm(
-    `Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`
-  );
+  let index=datos.findIndex((item)=>item.id==id)
 
-  if (validar) {
-    datos.splice(index, 1);
-    cargarTabla();
+  let validar=confirm(`Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`)
+
+  if(validar){
+    datos.splice(index, 1)
+    cargarTabla()
   }
-};
+
+}
 
 // Inicializo la tabla cuando se carga el script
 cargarTabla();
