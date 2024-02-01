@@ -31,6 +31,7 @@ window.mostrarModal = (id) => {
 const giftUpdate = (e) => {
   e.preventDefault();
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
+
   datos[index].gift = document.querySelector("#giftModal").value;
   datos[index].tipo = document.querySelector("#tipoModal").value;
   datos[index].tiempo = document.querySelector("#tiempoModal").value;

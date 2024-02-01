@@ -11,11 +11,11 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
 // Variable Global
-let idGiftUpdate = null;
+let idGiftUpdate=null
 
 // Método Global para mostrar el Modal
 window.mostrarModal = (id) => {
-  idGiftUpdate = id;
+  idGiftUpdate=id
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
 
   document.querySelector("#giftModal").value = datos[index].gift;
@@ -28,15 +28,19 @@ window.mostrarModal = (id) => {
 };
 
 // Actualizar los Datos, e para que no se refresque la pantalla
-const giftUpdate = (e) => {
-  e.preventDefault();
-  let index = datos.findIndex((item) => item.id == idGiftUpdate);
-  datos[index].gift = document.querySelector("#giftModal").value;
-  datos[index].tipo = document.querySelector("#tipoModal").value;
-  datos[index].tiempo = document.querySelector("#tiempoModal").value;
-  datos[index].precio = document.querySelector("#precioModal").value;
-  datos[index].imagen = document.querySelector("#imagenModal").value;
-};
+const giftUpdate=(e)=>{
+  
+  e.preventDefault()
+
+   let index = datos.findIndex((item) => item.id == idGiftUpdate);
+
+   datos[index].gift = 
+   datos[index].tipo=
+   datos[index].tiempo=
+   datos[index].precio=
+   datos[index].imagen=
+  
+}
 
 // Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {

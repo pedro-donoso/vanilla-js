@@ -11,11 +11,11 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
 // Variable Global
-let idGiftUpdate = null;
+let idGiftUpdate=null
 
 // Método Global para mostrar el Modal
 window.mostrarModal = (id) => {
-  idGiftUpdate = id;
+  idGiftUpdate=id
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
 
   document.querySelector("#giftModal").value = datos[index].gift;
@@ -27,16 +27,10 @@ window.mostrarModal = (id) => {
   myModal.show();
 };
 
-// Actualizar los Datos, e para que no se refresque la pantalla
-const giftUpdate = (e) => {
-  e.preventDefault();
-  let index = datos.findIndex((item) => item.id == idGiftUpdate);
-  datos[index].gift = document.querySelector("#giftModal").value;
-  datos[index].tipo = document.querySelector("#tipoModal").value;
-  datos[index].tiempo = document.querySelector("#tiempoModal").value;
-  datos[index].precio = document.querySelector("#precioModal").value;
-  datos[index].imagen = document.querySelector("#imagenModal").value;
-};
+// Actualizar los Datos
+const giftUpdate=()=>{
+  formModal
+}
 
 // Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {
@@ -111,4 +105,4 @@ cargarTabla();
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
 // Actualizar formulario
-document.querySelector("#formModal").addEventListener("submit", giftUpdate);
+document.querySelector("#formGift").addEventListener("submit", agregarGift);

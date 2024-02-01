@@ -11,12 +11,12 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
 // Variable Global
-let idGiftUpdate = null;
+let idGiftUpdate=null
 
 // Método Global para mostrar el Modal
 window.mostrarModal = (id) => {
-  idGiftUpdate = id;
-  let index = datos.findIndex((item) => item.id == idGiftUpdate);
+  id
+  let index = datos.findIndex((item) => item.id == id);
 
   document.querySelector("#giftModal").value = datos[index].gift;
   document.querySelector("#tipoModal").value = datos[index].tipo;
@@ -25,17 +25,6 @@ window.mostrarModal = (id) => {
   document.querySelector("#imagenModal").value = datos[index].imagen;
 
   myModal.show();
-};
-
-// Actualizar los Datos, e para que no se refresque la pantalla
-const giftUpdate = (e) => {
-  e.preventDefault();
-  let index = datos.findIndex((item) => item.id == idGiftUpdate);
-  datos[index].gift = document.querySelector("#giftModal").value;
-  datos[index].tipo = document.querySelector("#tipoModal").value;
-  datos[index].tiempo = document.querySelector("#tiempoModal").value;
-  datos[index].precio = document.querySelector("#precioModal").value;
-  datos[index].imagen = document.querySelector("#imagenModal").value;
 };
 
 // Creo Función para cargar y mostrar los datos en la tabla HTML
@@ -109,6 +98,3 @@ cargarTabla();
 
 // Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
-
-// Actualizar formulario
-document.querySelector("#formModal").addEventListener("submit", giftUpdate);
