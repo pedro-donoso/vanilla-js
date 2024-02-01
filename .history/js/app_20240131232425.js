@@ -38,9 +38,6 @@ const giftUpdate = (e) => {
   datos[index].imagen = document.querySelector("#imagenModal").value;
 
   cargarTabla()
-
-  myModal.hide()
-
 };
 
 // Creo Función para cargar y mostrar los datos en la tabla HTML

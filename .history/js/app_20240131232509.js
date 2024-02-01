@@ -39,7 +39,7 @@ const giftUpdate = (e) => {
 
   cargarTabla()
 
-  myModal.hide()
+  myModal.hide
 
 };
 

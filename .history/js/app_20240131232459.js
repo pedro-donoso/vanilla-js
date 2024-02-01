@@ -39,8 +39,7 @@ const giftUpdate = (e) => {
 
   cargarTabla()
 
-  myModal.hide()
-
+  
 };
 
 // Creo Función para cargar y mostrar los datos en la tabla HTML

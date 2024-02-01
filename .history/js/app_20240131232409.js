@@ -37,9 +37,7 @@ const giftUpdate = (e) => {
   datos[index].precio = document.querySelector("#precioModal").value;
   datos[index].imagen = document.querySelector("#imagenModal").value;
 
-  cargarTabla()
-
-  myModal.hide()
+  
 
 };
 
