@@ -3,7 +3,7 @@
 ## https://crud-vanillajs.netlify.app/
 
 ### 1. Comienzo del Proyecto
- 
+
  1.1. Creo carpeta **vanilla-js** en directorio raíz
 
  1.2. Abro carpeta con vscode
@@ -21,14 +21,8 @@
 2.2. Agrego *Plantilla con cdn de Bootstrap* al index.html
 
 2.3. Creo *carpeta data* donde almaceno el archivo **data.json**, que contiene los *productos iniciales* en **formato JSON**:
-```
-    "id": 1,
-    "gift": "Spotify Premium",
-    "tipo": "Suscripción",
-    "tiempo": "1 mes",
-    "precio": 250,
-    "imagen": "https://http2.mlstatic.com/D_NQ_NP_714537-MLA53061400161_122022-V.jpg"
-```
+
+![uno](https://github.com/pedro-donoso/vanilla-js/assets/68760595/0a736058-f2ce-4ac7-82f9-c5baefbc044c)
 
 2.4. Creo *carpeta js* con archivo **app.js** de **tipo módulo** y lo agrego en *index.html* bajo el script de Bootstrap
 
@@ -46,18 +40,7 @@ import datos from "../data/data.json" assert {type:"json"};
 
 3.1. En la *carpeta js* creo archivo **clases.js** con el **constructor**, para *exportar al app.js*:
 
-```
-export class Gift {
- constructor(id, gift, tipo, tiempo, precio, imagen) {
-  this.id = id;
-  this.gift = gift;
-  this.tipo = tipo;
-  this.tiempo = tiempo;
-  this.precio = precio;
-  this.imagen = imagen;
- }
-}
-```
+![dos](https://github.com/pedro-donoso/vanilla-js/assets/68760595/eefa2a2a-50b1-41ea-a4b1-4efeaf0d051b)
 
 3.2. En el archivo **app.js**, *Importo el archivo clases.js* con la **clase Gift**
 
@@ -69,74 +52,12 @@ import {Gift} from './clases.js'
 
 4.1. En el archivo *index.html* creo **Formulario Bootstrap**:
 
-```
-<form>
- <div class="row">
-  <div class="col-12 col-md-6 offset-md-3">
-   <label>Gift</label>
-    <input type="text" class="form-control" id="gift" required>
-  </div>
-   <div class="col">
-   <label>Tipo</label>
-    <select id="tipo" class="form-control">
-     <option value="Suscripción">Suscripción</option>
-     <option value="Compra">Compra</option>
-    </select>
-  </div>
- </div>
-  <div class="row mt-3">
-  <div class="col">
-   <label>Tiempo</label>
-    <input type="text" class="form-control" id="gift" required>
-  </div>
-   <div class="col">
-   <label>Tipo</label>
-    <select id="tiempo" class="form-control">
-     <option value="1 mes">1 mes</option>
-     <option value="3 meses">3 meses</option>
-     <option value="6">6 meses</option>
-    </select>
-  </div>
-  <div class="col">
-   <label>Precio</label>
-    <input type="number" class="form-control" id="precio required">
-  </div>
- </div>
- <div class="row mt-3">
-  <div class="col">
-   <input type="text" class="form-control" required placeholder="URL de la imagen" id="imagen">
-  </div>
- </div>
-<div class="mt-3 d-flex justify-content-end">
- <button class="btn btn-info">Guardar</button>
-</div>
- 
-</form>
-```
+![tres](https://github.com/pedro-donoso/vanilla-js/assets/68760595/24d88c77-9c47-4bb1-912b-e0065c853f38)
 
 4.2. En el archivo *index.html* creo **Tabla dinámica Bootstrap**:
 
-```
-<div class="row">
-            <div class="col-12 col-md-8 offset-md-2">
-                <h3>Tabla de contenido</h3>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Gift</th>
-                            <th>Tipo</th>
-                            <th>Tiempo</th>
-                            <th>Precio</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpo-tabla">
+![cuatro](https://github.com/pedro-donoso/vanilla-js/assets/68760595/9865913e-75cb-4dd2-9982-ccbf726b2e83)
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-```
 ### 5. Cuerpo de la Tabla 
 
 5.1 En el archivo *app.js* creo constante **cuerpoTabla** y selecciono el **id #cuerpo-tabla** ubicado en el *index.html*
@@ -165,43 +86,129 @@ const fila = document.createElement("tr");
 
 5.5 *Creo Celdas HTML* para cada propiedad del elemento
 
-```
-const celdas = `<th>${item.gift}</th>
-        <td>${item.tipo}</td>
-        <td>${item.tiempo}</td>
-        <td>$${item.precio}</td>
-        <td><img class="img-fluid w-50" src="${item.imagen}" alt="Imagen"></td>
-        <td>
-            <div class="d-flex gap-2">
-            <button onclick="mostrarModal(${item.id})" class="btn btn-outline-warning">
-            <img src="img/boligrafo.png"/>
-            </button>
-            <button onclick="borrarGift(${item.id})" class="btn btn-outline-danger">
-            <img src="img/cerrar.png"/>
-            </button>
-            </div>
-        </td>
-        `; ...
-```
+![cinco](https://github.com/pedro-donoso/vanilla-js/assets/68760595/41158401-1143-4e24-88a8-51c8b318b8fa)
 
-5.6 Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
+5.6 Establece el *innerHTML de la fila* y la *agrega al cuerpo de la tabla*
 
 ```
 fila.innerHTML = celdas;
     cuerpoTabla.append(fila);
 ```
 
-5.7 Inicializo la tabla cuando se carga el script
+5.7 *Inicializo la tabla* cuando se carga el script
 
 ```
 cargarTabla();
 ```
 
+### 6. Función para agregar un nuevo Gift cuando se envía el formulario
 
+```
+const agregarGift = (event) => {
+  event.preventDefault();...
+```
 
+6.1. *Extraigo valores de los inputs del formulario*, **at se posiciona en el último elemento del array datos**
 
+![seis](https://github.com/pedro-donoso/vanilla-js/assets/68760595/6b1df33d-4240-4ff6-b840-64efcf3c4024)
 
+6.2 Creo un *nuevo objeto Gift* y lo agrego al *array de datos*
 
+```
+datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));...
+```
 
+6.3 **Reseteo el formulario** y *recargo la tabla*
+
+```
+document.querySelector("#formGift").reset();
+  cargarTabla();
+};
+```
+
+6.4. Agrego al final del archivo app.js un **eventListener para los envíos**
+
+```
+document.querySelector("#formGift").addEventListener("submit", agregarGift);
+```
+
+### 7. Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
+
+```
+window.borrarGift = (id) => { ...
+```
+
+7.1. **FindIndex** obtiene la posición del elemento, se *iguala el id creado con el anterior*
+
+```
+let index = datos.findIndex((item) => item.id == id); ...
+```
+
+7.2. Pregunto al usuario si quiere **eliminar la gift card**
+
+```
+ let validar = confirm(
+    `Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`
+  ); ...
+```
+
+7.3. Elimina *1 elemento* de la posición indicada
+
+```
+ if (validar) {
+    datos.splice(index, 1); ...
+```
+
+7.4. Se vuelve a llamar a la función para que se *actualicen los datos*
+
+```
+ cargarTabla();
+  }
+}; ...
+```
+
+### 8. Agrego modal de Bootstrap al index.html
+
+![siete](https://github.com/pedro-donoso/vanilla-js/assets/68760595/c084ac31-052f-4914-9798-cd9e34196da5)
+   
+8.1. En *app.js* llamo al modal del index.html **mediante su id**
+
+```
+const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
+```
+
+8.2. Creo método global para mostrar el Modal
+
+![ocho](https://github.com/pedro-donoso/vanilla-js/assets/68760595/d7d607e6-a3cd-4e02-bff6-aba223ed879e)
+
+### 9. Creo variable global para actualizar datos del modal
+
+```
+let idGiftUpdate = null;
+```
+
+9.1. Variable para actualizar los Datos, e para que no se refresque la pantalla
+
+![nueve](https://github.com/pedro-donoso/vanilla-js/assets/68760595/6fa26845-bf1e-4a43-b094-9583ccdee2a5)
+
+9.2. Se carga la tabla con los datos actualizados
+
+```
+cargarTabla(); ...
+```
+
+9.3. Se oculta el modal
+
+```
+  myModal.hide();
+}; ...
+
+```
+
+9.4. Actualizo el formulario, mediante submit, al final del archivo app.js
+
+```
+document.querySelector("#formModal").addEventListener("submit", giftUpdate);
+```
 
 
