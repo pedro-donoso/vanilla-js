@@ -28,7 +28,7 @@ window.mostrarModal = (id) => {
   myModal.show();
 };
 
-// 11- Variable para Actualizar los Datos, e para que no se refresque la pantalla
+// 10- Variable para Actualizar los Datos, e para que no se refresque la pantalla
 const giftUpdate = (e) => {
   e.preventDefault();
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
@@ -126,5 +126,5 @@ cargarTabla();
 // 7- Agrego un event listener al formulario para los envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
-// 12- Actualizo el formulario
+// 9- Actualizo el formulario
 document.querySelector("#formModal").addEventListener("submit", giftUpdate);
