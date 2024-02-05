@@ -10,13 +10,13 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 // 8- Llamo al Modal
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
-// 10- Variable Global para guardar los datos
+// Variable Global
 let idGiftUpdate = null;
 
 // 9- Método Global para mostrar el Modal
 window.mostrarModal = (id) => {
   idGiftUpdate = id;
-  // 9- Obtengo la posición del elemento en el arreglo
+  9Obtengo la posici
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
 
   document.querySelector("#giftModal").value = datos[index].gift;

@@ -10,7 +10,7 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 // 8- Llamo al Modal
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
-// 10- Variable Global para guardar los datos
+// 10- Variable Global para guardar ls
 let idGiftUpdate = null;
 
 // 9- Método Global para mostrar el Modal
