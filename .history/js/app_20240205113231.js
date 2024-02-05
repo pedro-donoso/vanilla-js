@@ -44,16 +44,15 @@ const giftUpdate = (e) => {
 
 // 4- Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {
-
-    // 6.4- Limpio el contenido existente en el cuerpo de la tabla
+  // 4.1- Limpio el contenido existente en el cuerpo de la tabla
   cuerpoTabla.innerHTML = "";
 
-  // 4.1- Mapea cada elemento de los datos de data.json y crea filas de la tabla HTML
+  // 4.2- Mapea cada elemento de los datos de data.json y crea filas de la tabla HTML
   datos.map((item) => {
-    // 4.2- Creo una fila por cada dato
+    // 4.3- Creo una fila por cada dato
     const fila = document.createElement("tr");
 
-    // 4.3- Creo Celdas HTML para cada propiedad del elemento
+    // 4.4- Creo Celdas HTML para cada propiedad del elemento
     const celdas = `<th>${item.gift}</th>
                     <td>${item.tipo}</td>
                     <td>${item.tiempo}</td>
@@ -71,7 +70,7 @@ const cargarTabla = () => {
                     </td>
         `;
 
-    // 4.4- Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
+    // 4.5- Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
     fila.innerHTML = celdas;
     cuerpoTabla.append(fila);
   });
@@ -81,7 +80,7 @@ const cargarTabla = () => {
 const agregarGift = (event) => {
   event.preventDefault();
 
-  // 6.1- Extraigo valores de los inputs del formulario, at se posiciona en el último elemento del array datos
+  // 6.1- Extraigo valores de los inputs del formulario, at se posiciona en el último elemento del array 
   let id = datos.at(-1).id + 1;
   let gift = document.querySelector("#gift").value;
   let tipo = document.querySelector("#tipo").value;
@@ -89,15 +88,15 @@ const agregarGift = (event) => {
   let precio = document.querySelector("#precio").value;
   let imagen = document.querySelector("#imagen").value;
 
-  // 6.2- Creo un nuevo objeto Gift y lo agrego al array de datos
+  // Creo un nuevo objeto Gift y lo agrego al array de datos
   datos.push(new Gift(id, gift, tipo, tiempo, precio, imagen));
 
-  // 6.3- Reseteo el formulario y recargo la tabla
+  // Reinicio el formulario y recargo la tabla
   document.querySelector("#formGift").reset();
   cargarTabla();
 };
 
-// 7- Función para borrar un Gift cuando se hace clic en el botón correspondiente
+// Función para borrar un Gift cuando se hace clic en el botón correspondiente
 window.borrarGift = (id) => {
   let index = datos.findIndex((item) => item.id == id);
 

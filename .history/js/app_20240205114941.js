@@ -97,7 +97,7 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// 7- Función para borrar un Gift cuando se hace clic en el botón correspondiente
+// Función para borrar un Gift cuando se hace clic en el botón correspondiente
 window.borrarGift = (id) => {
   let index = datos.findIndex((item) => item.id == id);
 

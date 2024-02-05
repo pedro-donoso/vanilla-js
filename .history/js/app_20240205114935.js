@@ -53,7 +53,7 @@ const cargarTabla = () => {
     // 4.2- Creo una fila por cada dato
     const fila = document.createElement("tr");
 
-    // 4.3- Creo Celdas HTML para cada propiedad del elemento
+    // 4.4- Creo Celdas HTML para cada propiedad del elemento
     const celdas = `<th>${item.gift}</th>
                     <td>${item.tipo}</td>
                     <td>${item.tiempo}</td>
@@ -71,7 +71,7 @@ const cargarTabla = () => {
                     </td>
         `;
 
-    // 4.4- Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
+    // 4.5- Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
     fila.innerHTML = celdas;
     cuerpoTabla.append(fila);
   });
@@ -97,7 +97,7 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// 7- Función para borrar un Gift cuando se hace clic en el botón correspondiente
+// Función para borrar un Gift cuando se hace clic en el botón correspondiente
 window.borrarGift = (id) => {
   let index = datos.findIndex((item) => item.id == id);
 
