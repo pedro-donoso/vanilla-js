@@ -103,19 +103,19 @@ const agregarGift = (event) => {
 // 8- Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
 window.borrarGift = (id) => {
 
-  // 8.1- FindIndex obtiene la posición del elemento, se iguala el id creado con el anterior
+  // 7.1- FindIndex obtiene la posición del elemento, se iguala el id creado con el anterior
   let index = datos.findIndex((item) => item.id == id);
 
-  // 8.2 Pregunto al usuario si quiere eliminar la gift card
+  // 7.2 Pregunto al usuario si quiere eliminar la gift card
   let validar = confirm(
     `Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`
   );
 
-  // 8.3 Elimina 1 elemento de la posición indicada
+  // 7.3 Elimina 1 elemento de la posición indicada
   if (validar) {
     datos.splice(index, 1);
 
-    // 8.4 Se vuelve a llamar a la función para que se actualicen los datos
+    // 7.4 Se vuelve a llamar a la función para que se actualicen los datos
     cargarTabla();
   }
 };
@@ -123,8 +123,8 @@ window.borrarGift = (id) => {
 // 5- Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// 7- Agrego un event listener al formulario para los envíos
+// 7- Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
-// 9- Actualizo el formulario
+// 9- Actualizar formulario
 document.querySelector("#formModal").addEventListener("submit", giftUpdate);

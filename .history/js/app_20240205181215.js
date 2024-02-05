@@ -111,11 +111,11 @@ window.borrarGift = (id) => {
     `Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`
   );
 
-  // 8.3 Elimina 1 elemento de la posición indicada
+  // 7.3 Elimina 1 elemento de la posición indicada
   if (validar) {
     datos.splice(index, 1);
 
-    // 8.4 Se vuelve a llamar a la función para que se actualicen los datos
+    // 7.4 Se vuelve a llamar a la función para que se actualicen los datos
     cargarTabla();
   }
 };
@@ -123,8 +123,8 @@ window.borrarGift = (id) => {
 // 5- Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// 7- Agrego un event listener al formulario para los envíos
+// 7- Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
-// 9- Actualizo el formulario
+// 9- Actualizar formulario
 document.querySelector("#formModal").addEventListener("submit", giftUpdate);
