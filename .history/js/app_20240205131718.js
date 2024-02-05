@@ -64,6 +64,7 @@ const cargarTabla = () => {
                         <button onclick="mostrarModal(${item.id})" class="btn btn-outline-warning">
                         <img src="img/boligrafo.png"/>
                         </button>
+                        
                         <button onclick="borrarGift(${item.id})" class="btn btn-outline-danger">
                         <img src="img/cerrar.png"/>
                         </button>
@@ -97,7 +98,7 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// 7- Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
+// 7- Función para borrar un Gift cuando se hace clic en el botón
 window.borrarGift = (id) => {
 
   // 7.1- FindIndex obtiene la posición del elemento, se iguala el id creado con el anterior

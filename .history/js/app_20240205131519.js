@@ -97,7 +97,7 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// 7- Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
+// 7- Función para borrar un Gift cuando se hace clic en el botón
 window.borrarGift = (id) => {
 
   // 7.1- FindIndex obtiene la posición del elemento, se iguala el id creado con el anterior
@@ -108,11 +108,9 @@ window.borrarGift = (id) => {
     `Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`
   );
 
-  // 7.3 Elimina 1 elemento de la posición indicada
+  // 7.3 Elimina 1 elemento de la posición
   if (validar) {
     datos.splice(index, 1);
-
-    // 7.4 Se vuelve a llamar a la función para que se actualicen los datos
     cargarTabla();
   }
 };
