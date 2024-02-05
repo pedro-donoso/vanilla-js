@@ -70,7 +70,7 @@ const cargarTabla = () => {
                     </td>
         `;
 
-    // 4.5- Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
+    // Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
     fila.innerHTML = celdas;
     cuerpoTabla.append(fila);
   });
@@ -110,7 +110,7 @@ window.borrarGift = (id) => {
   }
 };
 
-// 5- Inicializo la tabla cuando se carga el script
+// Inicializo la tabla cuando se carga el script
 cargarTabla();
 
 // Agrego un event listener al formulario para manejar las envíos

@@ -44,15 +44,15 @@ const giftUpdate = (e) => {
 
 // 4- Creo Función para cargar y mostrar los datos en la tabla HTML
 const cargarTabla = () => {
-  // 4.1- Limpio el contenido existente en el cuerpo de la tabla
+  // Limpio el contenido existente en el cuerpo de la tabla
   cuerpoTabla.innerHTML = "";
 
-  // 4.2- Mapea cada elemento de los datos de data.json y crea filas de la tabla HTML
+  // Mapea cada elemento de los datos de data.json y crea filas de la tabla HTML
   datos.map((item) => {
-    // 4.3- Creo una fila por cada dato
+    // creo una fila por cada dato
     const fila = document.createElement("tr");
 
-    // 4.4- Creo Celdas HTML para cada propiedad del elemento
+    // Celdas HTML para cada propiedad del elemento
     const celdas = `<th>${item.gift}</th>
                     <td>${item.tipo}</td>
                     <td>${item.tiempo}</td>
@@ -70,7 +70,7 @@ const cargarTabla = () => {
                     </td>
         `;
 
-    // 4.5- Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
+    // Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
     fila.innerHTML = celdas;
     cuerpoTabla.append(fila);
   });
@@ -110,7 +110,7 @@ window.borrarGift = (id) => {
   }
 };
 
-// 5- Inicializo la tabla cuando se carga el script
+// Inicializo la tabla cuando se carga el script
 cargarTabla();
 
 // Agrego un event listener al formulario para manejar las envíos

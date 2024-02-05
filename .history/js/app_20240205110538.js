@@ -110,7 +110,7 @@ window.borrarGift = (id) => {
   }
 };
 
-// 5- Inicializo la tabla cuando se carga el script
+// 5 - Inicializo la tabla cuando se carga el script
 cargarTabla();
 
 // Agrego un event listener al formulario para manejar las envíos
