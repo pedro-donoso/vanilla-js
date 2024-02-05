@@ -126,5 +126,5 @@ cargarTabla();
 // 7- Agrego un event listener al formulario para los envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
-// 12- Actualizo el formulario
+// 10- Actualizo el formulario
 document.querySelector("#formModal").addEventListener("submit", giftUpdate);

@@ -13,7 +13,7 @@ const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 // 10- Variable Global (afuera) para guardar los datos
 let idGiftUpdate = null;
 
-// 9- Método Global para mostrar el Modal 
+// 9- Método Global para mostrar el Modal
 window.mostrarModal = (id) => {
   idGiftUpdate = id;
   // Obtengo la posición del elemento en el arreglo
@@ -100,7 +100,7 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// 9- Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
+// 8- Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
 window.borrarGift = (id) => {
 
   // 8.1- FindIndex obtiene la posición del elemento, se iguala el id creado con el anterior
@@ -126,5 +126,5 @@ cargarTabla();
 // 7- Agrego un event listener al formulario para los envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
-// 12- Actualizo el formulario
+// 9- Actualizo el formulario
 document.querySelector("#formModal").addEventListener("submit", giftUpdate);

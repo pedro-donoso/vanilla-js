@@ -7,16 +7,15 @@ import { Gift } from "./clases.js";
 // 3- Selecciono el elemento HTML con el id "cuerpo-tabla"
 const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 
-// 8- Llamo al Modal
+// Llamo al Modal
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
-// 10- Variable Global (afuera) para guardar los datos
+// Variable Global
 let idGiftUpdate = null;
 
-// 9- Método Global para mostrar el Modal 
+// Método Global para mostrar el Modal
 window.mostrarModal = (id) => {
   idGiftUpdate = id;
-  // Obtengo la posición del elemento en el arreglo
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
 
   document.querySelector("#giftModal").value = datos[index].gift;
@@ -28,7 +27,7 @@ window.mostrarModal = (id) => {
   myModal.show();
 };
 
-// 11- Variable para Actualizar los Datos, e para que no se refresque la pantalla
+// Actualizar los Datos, e para que no se refresque la pantalla
 const giftUpdate = (e) => {
   e.preventDefault();
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
@@ -38,10 +37,8 @@ const giftUpdate = (e) => {
   datos[index].precio = document.querySelector("#precioModal").value;
   datos[index].imagen = document.querySelector("#imagenModal").value;
 
-  // 11.1- Se carga la tabla con los datos actualizados
   cargarTabla();
 
-  // 11.2- Se oculta el modal
   myModal.hide();
 };
 
@@ -100,22 +97,19 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-// 9- Función para borrar un Gift cuando se hace clic en el botón, se agrega metodo al object model con window
+// 7- Función para borrar un Gift cuando se hace clic en el botón
 window.borrarGift = (id) => {
 
-  // 8.1- FindIndex obtiene la posición del elemento, se iguala el id creado con el anterior
+  // 7.1- FindIndex obtiene la posición del elemento, se iguala 
   let index = datos.findIndex((item) => item.id == id);
 
-  // 8.2 Pregunto al usuario si quiere eliminar la gift card
+  // 7.2 Pregunto al usuario si quiere eliminar la gift card
   let validar = confirm(
     `Está seguro/a que quiere eliminar la gift card ${datos[index].gift}?`
   );
 
-  // 8.3 Elimina 1 elemento de la posición indicada
   if (validar) {
     datos.splice(index, 1);
-
-    // 8.4 Se vuelve a llamar a la función para que se actualicen los datos
     cargarTabla();
   }
 };
@@ -123,8 +117,8 @@ window.borrarGift = (id) => {
 // 5- Inicializo la tabla cuando se carga el script
 cargarTabla();
 
-// 7- Agrego un event listener al formulario para los envíos
+// 7- Agrego un event listener al formulario para manejar las envíos
 document.querySelector("#formGift").addEventListener("submit", agregarGift);
 
-// 12- Actualizo el formulario
+// Actualizar formulario
 document.querySelector("#formModal").addEventListener("submit", giftUpdate);
