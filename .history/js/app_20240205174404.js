@@ -41,7 +41,6 @@ const giftUpdate = (e) => {
   // 11.1- Se carga la tabla con los datos actualizados
   cargarTabla();
 
-  // 11.2- Se oculta el modal
   myModal.hide();
 };
 

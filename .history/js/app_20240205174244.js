@@ -10,7 +10,7 @@ const cuerpoTabla = document.querySelector("#cuerpo-tabla");
 // 8- Llamo al Modal
 const myModal = new bootstrap.Modal(document.getElementById("modalGift"));
 
-// 10- Variable Global (afuera) para guardar los datos
+// 10- Variable Global ()para guardar los datos
 let idGiftUpdate = null;
 
 // 9- Método Global para mostrar el Modal
@@ -28,7 +28,7 @@ window.mostrarModal = (id) => {
   myModal.show();
 };
 
-// 11- Variable para Actualizar los Datos, e para que no se refresque la pantalla
+// Actualizar los Datos, e para que no se refresque la pantalla
 const giftUpdate = (e) => {
   e.preventDefault();
   let index = datos.findIndex((item) => item.id == idGiftUpdate);
@@ -38,10 +38,8 @@ const giftUpdate = (e) => {
   datos[index].precio = document.querySelector("#precioModal").value;
   datos[index].imagen = document.querySelector("#imagenModal").value;
 
-  // 11.1- Se carga la tabla con los datos actualizados
   cargarTabla();
 
-  // 11.2- Se oculta el modal
   myModal.hide();
 };
 
