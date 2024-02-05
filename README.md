@@ -116,6 +116,27 @@ import {Gift} from './clases.js'
 
 4.2. En el archivo *index.html* creo **Tabla Bootstrap**:
 
+```
+<div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h3>Tabla de contenido</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Gift</th>
+                            <th>Tipo</th>
+                            <th>Tiempo</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+```
 
 
 
