@@ -65,7 +65,7 @@ export class Gift {
 import {Gift} from './clases.js'
 ```
 
-### 4. Creación del Formulario y Tabla
+### 4. Creación del Formulario y Tabla dinámica
 
 4.1. En el archivo *index.html* creo **Formulario Bootstrap**:
 
@@ -114,7 +114,7 @@ import {Gift} from './clases.js'
 </form>
 ```
 
-4.2. En el archivo *index.html* creo **Tabla Bootstrap**:
+4.2. En el archivo *index.html* creo **Tabla dinámica Bootstrap**:
 
 ```
 <div class="row">
@@ -137,7 +137,65 @@ import {Gift} from './clases.js'
             </div>
         </div>
 ```
+### 5. Cuerpo de la Tabla 
 
+5.1 En el archivo *app.js* creo constante **cuerpoTabla** y selecciono el **id #cuerpo-tabla** ubicado en el *index.html*
+
+```
+const cuerpoTabla = document.querySelector("#cuerpo-tabla");
+```
+
+5.2 Creo Función para *cargar y mostrar los datos en la tabla* HTML:
+
+```
+const cargarTabla = () => { ...
+```
+
+5.3 **Mapea cada elemento** de los datos de data.json y *crea filas* de la tabla HTML
+
+```
+datos.map((item) => { ...
+```
+
+5.4 Creo una *fila por cada dato*
+
+```
+const fila = document.createElement("tr");
+```
+
+5.5 *Creo Celdas HTML* para cada propiedad del elemento
+
+```
+const celdas = `<th>${item.gift}</th>
+        <td>${item.tipo}</td>
+        <td>${item.tiempo}</td>
+        <td>$${item.precio}</td>
+        <td><img class="img-fluid w-50" src="${item.imagen}" alt="Imagen"></td>
+        <td>
+            <div class="d-flex gap-2">
+            <button onclick="mostrarModal(${item.id})" class="btn btn-outline-warning">
+            <img src="img/boligrafo.png"/>
+            </button>
+            <button onclick="borrarGift(${item.id})" class="btn btn-outline-danger">
+            <img src="img/cerrar.png"/>
+            </button>
+            </div>
+        </td>
+        `; ...
+```
+
+5.6 Establece el innerHTML de la fila y la agrega al cuerpo de la tabla
+
+```
+fila.innerHTML = celdas;
+    cuerpoTabla.append(fila);
+```
+
+5.7 Inicializo la tabla cuando se carga el script
+
+```
+cargarTabla();
+```
 
 
 
