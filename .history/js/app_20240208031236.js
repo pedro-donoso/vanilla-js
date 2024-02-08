@@ -61,7 +61,7 @@ const cargarTabla = () => {
                     <td>${item.tipo}</td>
                     <td>${item.tiempo}</td>
                     <td>$${item.precio}</td>
-                    <td><img class="img" src="${item.imagen}" alt="Imagen" width="100"></td>
+                    <td><img class="img w-" src="${item.imagen}" alt="Imagen"></td>
                     <td>
                         <div class="d-flex gap-2">
                         <button onclick="mostrarModal(${item.id})" class="btn btn-outline-warning">
