@@ -1,7 +1,3 @@
-![pass](https://github.com/pedro-donoso/vanilla-js/assets/68760595/d9a00086-b92c-4ee3-8ff5-091a0f2ede67)
-
-## https://crud-vanillajs.netlify.app/
-
 ### 1. Comienzo del Proyecto
 
  1.1. Creo carpeta **vanilla-js** en directorio raíz
